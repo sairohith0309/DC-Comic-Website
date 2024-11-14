@@ -1,0 +1,162 @@
+
+<style>
+h1{
+    font-family: monospace;
+
+} 
+
+</style>
+
+
+   <div>
+      <h1>Comic Trekker</h1> 
+      
+      
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      
+      <% if user_signed_in? %>
+          <%= link_to "Hi, #{current_user.name}", edit_user_registration_path %>
+          <%= button_to 'Sign Out', destroy_user_session_path, method: :delete %>
+        <% else %>
+            <%= link_to 'Sign In', new_user_session_path, class:'me-md-2' %>
+            <%= link_to 'Sign Up', new_user_registration_path %>
+        <% end %>
+      </div>
+      
+ <% if user_signed_in? %>
+     <h3> <div class="top">my favourite Character: <%= "#{current_user.favch}" %> <%= link_to 'Claim your exiting offer', offer_path(@dashboard), class: 'btn btn-primary' %> </div>
+     </h3>
+            <% end %>
+<div>
+     <p>
+     <table>
+     <tr>
+     <td><%= link_to 'Home', dashboard_path(@dashboard), class: 'btn btn-primary' %> </td>
+      <td>&nbsp;&nbsp;&nbsp;</td>
+    <td><%= link_to 'Comics', books_path(@book), class: 'btn btn-primary' %> </td>
+      <td> &nbsp;&nbsp;&nbsp;    </td>
+    <td><%= link_to 'Account' ,account_path(@dashboard), class: 'btn btn-primary' %></td>
+      <td>  &nbsp;&nbsp;&nbsp;   </td>   
+    <td><%= link_to 'Edit Profile', edit_user_registration_path, class: 'btn btn-primary' %></td>
+    </td></tr>
+  </table>
+
+</p>   
+
+
+      <table>
+      <thead><h3>latest comic books</h3></thead>  
+<tbody>
+<tr>
+<td>
+<figure class="figure">
+  <%= image_tag 'book2', style: 'max-width: 10rem;' %>
+  <figcaption class="figure-caption text-right">Buy      14.99</figcaption>
+</figure>
+</td>
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</td>
+<td>
+<figure class="figure">
+  <%= image_tag 'book1', style: 'max-width: 10rem;' %>
+  <figcaption class="figure-caption text-right">Buy      14.99</figcaption>
+</figure>
+</td>
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</td>
+<td>
+<figure class="figure">
+  <%= image_tag 'book2', style: 'max-width: 10rem;' %>
+  <figcaption class="figure-caption text-right">Buy      14.99</figcaption>
+</figure>
+</td>
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</td>
+<td>
+<figure class="figure">
+  <%= image_tag 'image 6', style: 'max-width: 10rem;' %>
+  <figcaption class="figure-caption text-right">Buy      14.99</figcaption>
+</figure>
+</td>
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</td>
+
+<td>
+<figure class="figure">
+  <%= image_tag 'image 5', style: 'max-width: 10rem;' %>
+  <figcaption class="figure-caption text-right">Buy      14.99</figcaption>
+</figure>
+</td>
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</td>
+<td>
+<figure class="figure">
+  <%= image_tag 'image 4', style: 'max-width: 10rem;' %>
+  <figcaption class="figure-caption text-right">Buy      14.99</figcaption>
+</figure>
+</td>
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</td>
+</tr>
+
+<tr>
+<td>
+<figure class="figure">
+  <%= image_tag 'image 2', style: 'max-width: 10rem;' %>
+  <figcaption class="figure-caption text-right">Buy      14.99</figcaption>
+</figure>
+</td>
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</td>
+<td>
+<figure class="figure">
+  <%= image_tag 'image3', style: 'max-width: 10rem;' %>
+  <figcaption class="figure-caption text-right">Buy      14.99</figcaption>
+</figure>
+</td>
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</td>
+<td>
+<figure class="figure">
+  <%= image_tag 'image1', style: 'max-width: 10rem;' %>
+  <figcaption class="figure-caption text-right">Buy      14.99</figcaption>
+</figure>
+</td>
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</td>
+
+<td>
+<figure class="figure">
+  <%= image_tag 'image3', style: 'max-width: 10rem;' %>
+  <figcaption class="figure-caption text-right">Buy      14.99</figcaption>
+</figure>
+</td>
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</td>
+<td>
+<figure class="figure">
+  <%= image_tag 'image 2', style: 'max-width: 10rem;' %>
+  <figcaption class="figure-caption text-right">Buy      14.99</figcaption>
+</figure>
+</td>
+
+<td>
+<%= link_to 'See All', books_path(@book)  %> 
+</td>
+</tr>
+
+</tbody>
+</table>
+
+
+

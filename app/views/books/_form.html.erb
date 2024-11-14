@@ -1,0 +1,19 @@
+<%= simple_form_for :filter, url: booksearch_path, method: :get do |f| %>
+    <ul>
+  
+    
+    <li>
+    <div class="col-md-3">
+      <label>Book Character</label>
+      <%= f.input :book_char, collection: Book.all, input_html: { class: "form-control" }, include_blank: "Select a character", label: false %>
+    </div>
+    </li>
+  </div>
+  <li>
+  <div class="mt-2">
+    <%= f.submit "Search", class: "btn btn-sm btn-primary" %>
+  </div>
+  </li>
+  </ul>
+
+<% end %>

@@ -1,0 +1,35 @@
+<h1><%= @book.book_title %></h1>
+<%= image_tag 'book2.jpg', class: 'w-100', style: 'max-width: 8rem;' %>
+<p>
+    Book Description: 
+  <%= @book.description %>
+</p>
+<p>
+    Author: 
+    <%= @book.book_author %>
+</p>
+<p>
+    Release Date: 
+    <%= @book.release_date %>
+</p>
+<p>
+    ID: 
+    <%= @book.book_id %>
+</p>
+<p>
+    Price: 
+    <%= @book.book_price %>
+</p>
+
+<p>
+<%= link_to 'Back', books_path, class: 'btn btn-primary' %>
+<%= link_to 'Buy', myorder_path, class: 'btn btn-primary' %>
+
+<%= bootstrap_form_with model: @review, method: :patch, url: review_path, method: :post, local: true do |f| %>
+    <%= f.text_field :review %>
+    <%= link_to 'Submit', reviewresult_path, class: 'btn btn-primary' %>
+   
+<% end %>
+
+
+

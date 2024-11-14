@@ -1,0 +1,20 @@
+<h1>My Orders</h1>
+
+<%= image_tag 'book2.jpg', class: 'w-80', style: 'max-width: 10rem;' %>
+<p>
+    <%= @book.book_id %>
+</p>
+<p>
+<%= @book.book_title %>
+</p>
+
+<p>
+    <%= @book.book_price %>
+</p>
+
+<p>
+<%= @order.order_date %>
+</p>
+
+<%= link_to 'Confirm Order', orderpay_path(@book), class: 'btn btn-primary' %>
+

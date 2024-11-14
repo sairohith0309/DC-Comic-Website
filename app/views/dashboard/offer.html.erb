@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial;
+}
+
+h3,h1,h2{
+    font-family: monospace;
+
+}
+
+.coupon {
+  border: 5px dotted #bbb;
+  width: 80%;
+  border-radius: 15px;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.container {
+  padding: 2px 16px;
+  background-color: #f1f1f1;
+}
+
+.promo {
+  background: #ccc;
+  padding: 3px;
+}
+
+.expire {
+  color: red;
+}
+</style>
+</head>
+<body>
+
+<div class="coupon">
+  <div class="container">
+    <h1>Comic Trekker</h1><br>
+    <center><h4>! ! ! secial coupon! ! !</h4></center>
+  </div>
+ <center> <%= image_tag 'coupon', style: 'max-width: 10rem;' %> </center>
+  <div class="container" style="background-color:white">
+  <center>  <h2><b>10$ OFF YOUR PURCHASE</b></h2></center>
+  <center>  <h3> On <%= "#{current_user.favch}"  %> Character Book </h3> </center>
+    <p>Have a discount coupon to use on an eligible online order? Enter the coupon code on the very last page of the checkout process, just before clicking the submit button. You'll see a text box labeled Coupon Code. Enter the code and click "Apply Coupon". </p></div>
+  <div class="container">
+    <p>Use Promo Code: <span class="promo">BOH232</span></p>
+    <p class="expire">Expires: Jan 03, 2023</p>
+  </div>
+</div>
+
+</body>
+</html> 
